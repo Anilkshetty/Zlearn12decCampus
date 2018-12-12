@@ -1,0 +1,965 @@
+<html lang="en">
+<head>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="../css/admin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+
+ <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper grey darken-4">
+            <a href="#" class="brand-logo"><img src="../image/logo-white.png" alt="" class="responsive-img" style="height:65px;"> </a>
+            <a href="#" class="button-collapse hide-on-large" data-activates="slide-out"><i class="material-icons">menu</i></a>
+
+
+       
+            <ul class="left hide-on-med-and-down" style="padding-left:255px;">
+                        <nav class="z-depth-0 " style="height:40px; margin-top:12px; width: 50%; ">    
+                                <div class="nav-wrapper grey darken-4">
+                                    <form>
+                                    <div class="input-field  z-depth-1 myinput">
+                                        <input id="search" type="search"  placeholder="Explore Zelern" autocomplete="off" required >
+                                        <label class="label-icon" for="search"><i class="material-icons black-text" style="margin-top:-22px;">search</i></label>
+                                        <i class="material-icons" style="margin-top:-12px; font-size:20px;">close</i>
+                                    </div>
+                                    </form>
+                                </div>
+                        </nav>                
+            </ul> 
+
+            <ul class="right">
+                <li><a href="#" class="dropdown-profilebutton " data-activates="dropdown-profile"><img src="../image/person.jpg" alt="" class="responsive-img circle myProfileImage"></a></li>
+                <li><a href="#" class="dropdown-button header-notification"  data-activates="dropdown-notification"><i class="fa fa-bell " style="color:white !important;font-size:23px"></i><span class="pink lighten-1 new-notification-badge">0</span></a></li>
+                <li class="hide-on-small-only"><a href="#"  class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="fa fa-sign-out" style="font-size:25px;"></i></a></li>
+            </ul>  
+            
+<!------------------------------ dropdown structure for profile ------------------------------------------------------------------------------>
+
+            <ul id="dropdown-profile" class="dropdown-content z-depth-3 dropdown-profile" >
+
+                    <li><a href="#" id="profile"><i class="fa fa-user left dropdwncolor" aria-hidden="true"></i> Profile</a></li>
+                    <li><a href="#" id="settings"><i class="fa fa-cogs left dropdwncolor" aria-hidden="true"></i> Settings</a></li>
+                    <li><a href="#" id="help"><i class="fa fa-question-circle left dropdwncolor" aria-hidden="true"></i> Help</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/logout/"><i class="fa fa-sign-out left dropdwncolor" aria-hidden="true"></i> Logout</a></li>
+            </ul>
+
+<!---------------------------------------------- drop structure for notification -------------------------------------------------------------->
+
+            <ul id="dropdown-notification" class="dropdown-content dropdown-notification">
+                <li><a href="#!" class="" style="font-size:15px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">NOTIFICATION<span class="new badge right pink">1</span></a></li>
+            </ul>
+            
+        </div> 
+   </nav>
+</div>
+<!------------------------------------------------------------- header end --------------------------------------------------------------------->
+<ul class="side-nav fixed mysidenav" id="slide-out" style="height: calc(100% - 5px);">
+    <li class="grey lighten-3">
+        <div class="user-view ">
+            <!-- <div class="background hoverable">
+                 <img src="../image/pexels.jpeg" alt=""  class="responsive-img">
+            </div> -->
+            <a href="#"><img src="../image/person.jpg" alt="" class="responsive-img circle z-depth-1"></a>
+            <a href="#"><span class="name grey-text fnt-family text-darken-4" style="font-weight:bold;">ARCHANA BM</span></a>
+            <a href="#"><span class="email black-text" style="font-family: monospace;padding: 0;font-weight:bold;">Archan@gmail.com</span></a>
+            <a href="#"><span class="name black-text" style="font-family:monospace;margin: 0;padding: 0;font-weight:bold;">BNMIT COLLEGE</span></a>
+            <div class="input-field col s12 ">
+                <select>
+                <option value=""  selected >Janus (current)</option>
+                <option value="" >Pragnyan (Previous)</option>
+                </select>
+                <label style="margin-top:-5px;margin-left:-9px;" class="fnt-family grey-text text-darken-2">Switch Projects</label>
+            </div>
+        </div>
+        <div class="divider"></div>
+    </li>
+   
+
+    <li class="btm" id="dashboard">
+        <a href="#"><i class="fa fa-tachometer myicon" aria-hidden="true"></i>Dashboard</a>
+    </li>
+
+    <li id="janus" class="btm">
+            <a href="#"><i class="fa fa-info-circle myicon" aria-hidden="true"></i>About Janus </a>
+    </li>
+
+    <li id="student" class="btm">      
+            <a href="#"><i class="fa fa-users myicon" aria-hidden="true"></i>Student</a>         
+    </li>
+
+    <li class="btm" id="attendance">        
+        <a href="#" ><i class="fa fa-check myicon" aria-hidden="true"></i>Attendance</a>         
+    </li>
+
+    <li class="btm" id="module">
+            <a href="#"><i class="fa fa-cubes myicon" aria-hidden="true"></i>Modules</a>            
+   </li>
+
+   <li class="btm" id="assessment">  
+        <a href="#"><i class="fa fa-area-chart myicon" aria-hidden="true" ></i>Assesments</a>          
+  </li>  
+
+
+</ul>
+
+
+<!--------------------------------------------------- sidenav end----------------------------------------------------------------------------->
+
+<main>
+
+
+<div class="main">
+<!-----------------------------------------------------for dashboard page -------------------------------------------------------------------->
+<div id="dashboardpage" class="dashboard">
+    <div class="mycontainer grey lighten-3 z-depth-3">
+        <div class="row">
+            <div class="col s12">
+                <div class="card" style="border-radius:8px;">
+                    <div class="card-header grey lighten-3" style="padding:8px;border-radius:8px;">
+                        <div class="card-tittle">
+                            <h4 class="fnt-family">Janus Dashboard</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card center hoverable" style="overflow: hidden; border-radius: 10px;min-height: 250px">
+                    <div class="card-content" style="padding:22px 5px!important">
+                        <a href="#"><h4 class="fnt-family1">Students</h4></a> 
+                        <a href="#"><h4 class="fnt-family1 orange-text">500</h5></a>  
+                            <p>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv1</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv2:52</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv3</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv4:55</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv:585</a>
+                            </p>
+                            <a href="#" class="activator"> <i class="fa fa-expand right myicon1" style="position:absolute;right:5;bottom:2;"></i></a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">
+                        <a href="#" class="grey-text text-darken-1 ">Students (500) </a><i class="fa fa-times right"></i></span>
+                        
+                        <p>
+                            <div style="border-bottom:1px solid rgb(172, 168, 168);text-align: left">Sem:7&nbsp;500</div>
+                        </p>
+
+                        <p>
+                            <div style="text-align:left;">
+                                    <a class="task-cat green white-text border-radius-2">CSE:93</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">B:49</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">A:44</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">C:51</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">B:49</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">A:44</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">C:51</a>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div style="text-align:left;">
+                                    <a class="task-cat green white-text border-radius-2">CIVIL:93</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">B:49</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">A:44</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">C:51</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">B:49</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">A:44</a>
+                                    <a class="task-cat white grey-text text-darken-2 border-radius-2 ">C:51</a>
+                            </div>
+                            </p>
+                        
+                    </div>
+
+                </div>
+            </div>
+<!------------------------------------------------------------------------ attendence start------------------------------------------------- -->
+            <div class="col s12 m6">
+                    <div class="card center hoverable" style="overflow: hidden;border-radius: 10px;min-height: 250px">
+                        <div class="card-content" style="padding:22px 5px!important">
+                            <a href="#"><h4 class="fnt-family1">Attendance</h4></a> 
+                            <a href="#"><h4 class="fnt-family1 orange-text">50%</h5></a>  
+                            <a href="#" class="right" style="position: absolute; top:10px; right: 10px; z-index: 99;"><i class="fa fa-download"></i> Download </a> 
+                            <p>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv1</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv2:52</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv3</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv4:55</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv:585</a>
+                            </p>
+                            <a href="#" class="activator"> <i class="fa fa-expand right myicon1" style="position:absolute;right:5;bottom:2;"></i></a>
+                        </div>
+
+                        <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">
+                                <a href="#" class="grey-text text-darken-1 ">Attendance (500) </a><i class="fa fa-times right"></i></span>
+                                <p>
+                                    <div style="border-bottom:1px solid rgb(172, 168, 168);text-align: left">Sem:7&nbsp;500</div>
+                                </p>
+        
+                                <p> 
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 1 : 55.42 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 2 : 65 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 3 : 65.42 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 4 : 88.42 %</div>
+                                </p>
+        
+                                <p>
+
+                                </p>
+                                
+                            </div>                       
+                    </div>
+             </div>
+        </div>
+<!------------------------------------------------------------------course completionstar------------------------------------------------------->
+        <div class="row">
+                <div class="col s12 m6">
+                    <div class="card center hoverable" style="overflow: hidden;border-radius:10px; min-height: 250px">
+                        <div class="card-content" style="padding:22px 5px!important">
+                            <a href="#"><h4 class="fnt-family1">Course Completion </h4></a> 
+                            <a href="#"><h4 class="fnt-family1 orange-text">50%</h5></a>  
+                            <p>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv1</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv2:52</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv3</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv4:55</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv:585</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv1</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv2:52</a>
+                               
+                            </p>
+                            <a href="#" class="activator"> <i class="fa fa-expand right myicon1" style="position:absolute;right:5;bottom:2;"></i></a>
+                        </div>
+
+                        <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">
+                                <a href="#" class="grey-text text-darken-1 ">Attendance (500) </a><i class="fa fa-times right"></i></span>
+                                <p>
+                                    <div style="border-bottom:1px solid rgb(172, 168, 168);text-align: left">Sem:7&nbsp;500</div>
+                                </p>
+        
+                                <p> 
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 1 : 55.42 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 2 : 65 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 3 : 65.42 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 4 : 88.42 %</div>
+                                </p>
+        
+                                <p>
+
+                                </p>
+                                
+                            </div>                       
+                    </div>
+                </div>
+<!--------------------------------------------------- course completion complete-------------------------------------------------------------->
+                <div class="col s12 m6">
+                    <div class="card center hoverable" style="overflow: hidden;border-radius:10px; min-height: 250px">
+                        <div class="card-content" style="padding:22px 5px!important">
+                            <a href="#"><h4 class="fnt-family1">Assessment Result </h4></a> 
+                            <a href="#"><h4 class="fnt-family1 orange-text">50%</h5></a>  
+                            <p>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv1</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv2:52</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv3</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv4:55</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv:585</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv1</a>
+                                <a href="" class="task-cat grey-text text-darken-1 border-radius-2">Asv2:52</a>
+                            
+                            </p>
+                            <a href="#" class="activator"> <i class="fa fa-expand right myicon1" style="position:absolute;right:5;bottom:2;"></i></a>
+                        </div>
+
+                        <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">
+                                <a href="#" class="grey-text text-darken-1 ">Attendance (500) </a><i class="fa fa-times right"></i></span>
+                                <p>
+                                    <div style="border-bottom:1px solid rgb(172, 168, 168);text-align: left">Sem:7&nbsp;500</div>
+                                </p>
+
+                                <p> 
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 1 : 55.42 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 2 : 65 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 3 : 65.42 %</div>
+                                    <div class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2 mb-1 mt-1 left-align">ASV 4 : 88.42 %</div>
+                                </p>
+
+                                <p>
+
+                                </p>
+                                
+                        </div>                       
+                    </div>
+                </div>
+<!----------------------------------------------------------------assesment complete-------------------------------------------------------- -->
+        </div>
+  </div>
+</div>
+
+
+<!--------------------------------------------------------------- aboput Januspage start ------------------------------------------------------->
+<div id="aboutjanuspage" class="mycontainer">
+    <div class="row">
+        <div class="col s12">
+            <div class="card z-depth-0.1">
+                <div class="card-header grey lighten-3" style="padding:8px;">
+                    <div class="card-tittle">
+                        <h4 class="fnt-family">About Janus </h4>
+                    </div>
+                </div>
+
+                <div class="card-content" style="font-family: 'Century Gothic', cursive; font-style: italic;text-align: justify">
+                    <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Janus, an intense, well researched, long term training signature program by ZESTECH for engineering students to enhance their skills sets towards placement requirements for the current industry standards. Janus, eventually brings a sea change and enhancement in student behaviour and adjustments which ultimately caters to the need of man power demand in the market. Characteristics of Janus content and delivery method are used to predict effect sizes and measures of Industry requirement mapping with students’ externalizing behaviour. After controlling for differences attributable to research design, Janus program components consistently associated with larger effects included increasing positive Trainer - Student interactions and communication skills, coaching students to use time out and the importance of placement consistency, and requiring students to practice new skills with their friends during Janus training sessions. Program components consistently associated with smaller effects included teaching students problem solving; coaching students to promote cognitive, academic, or social skills; and providing other, additional services which helps candidates to come out as employable commandos. The results have implications for selection and strengthening of existing Placement Trend.<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Janus, is one of the signature programs by ZESTECH which matches with NASSCOM’s current industry training curriculum which makes this program a, one stop solution for students joining Engineering in any field of their choice. Training is conducted right from the 1st year and goes on till the candidate reaches final year of his/her course. As it follows a hierarchical, multi – level training methodology, Janus remediates industry – Campus gaps successfully. Abstract Attention Process in the Program improves student coordination in accomplishing tasks and also develops trainer – student interaction.<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The evaluation process helps ZESTECH to identify outcomes in a timely fashion. This helps the campus to tangibly visualize ‘Need Vs Reality’ and constantly improving training delivery methods to have the ratio to ‘1’. The assessments will also help in detecting changes that must be made to improve course design, content which dynamically improves the contribution to the overall effectiveness of Janus. Assessments happens in three phases, as in 1st, 2nd and 3rd. Assessments along with student attendance will keep the institution on toes to understand the level of their students which also entitles the students to receive Prangyan Certificate which validates the outcome. As , the pre- assessment happens before the commencement of the program, the three other evaluations will give us a clear picture of where the student’s position is after the training.Outcome based Training Model plays a vital role in giving the change that is needed.<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Students’ initiatives to move towards the next level in their skill sets, various activities and motivational actions are taken during the course of the program. CRIC was and is a massive hit which develops and identifies students’ talent and coming up with various creative methods to be unique in the crowd. Clean the campus through CRIC which was held last year, brought a profound change in students’ behaviour towards hygienic lifestyle.<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technology, favours Janus a lot in having videos online for the sessions that students have learned. Videos and trainer interaction online, helps the candidate get in touch with experts constantly even after the training classes are over. Online evaluations will help in understanding students’ responsibility factor which will in turn help students to get in touch with the trainers for doubts and clarifications. A powerful research team constantly working on industry requirements, helps to set the training and evaluations in a very vivid manner and constant check on Quality ensures the gaps are bridged.<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the process, star performers are identified extensively. These star performers are the ones who have performed excellently well in the sessions. These candidates’ parents are contacted over the phone and giving them the good news about their wards. This, indeed improved students’ motivation and was visually seen that the students started participating and performing exemplarily well in the training sessions.<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All said and Done, Janus is a process to experience reality and engineering student must Savour it.
+                    </p>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!---------------------------------------------------------------  student start ------------------------------------------------------->
+
+<div id="studentpage" class="mycontainer">
+    <div class="row">
+        <div class="col s12">
+            <div class="card  border-grey-1 border-radius-3 z-depth-0" style="overflow:hidden;">
+                <div class="card-header grey lighten-3" style="padding:8px;">
+                    <div class="card-title">
+                        <h4 class="fnt-family grey-text text-darken-2">Students (500) </h4>
+                    </div>
+                </div>
+                <div class="mycontainer" style="padding-top:2% !important;margin: auto !important;">
+                    <span class="grey-text text-darken-2" style="font-style:italic;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Showing all students of college enrolled in Janus.</span>
+
+                    <ul class="collection z-depth-0">
+                        <li class="collection-item">1.
+                            <b class="fnt-family">CHAITRA S </b>
+                            <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2">1SJ14CS025</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/"> Sem:7</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/1/"> CSE</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/1/B/"> Sec:B</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">chaithracse2@gmail.com</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> 9606427248 </span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">DOB:3 December, 1997</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Gender:Female</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">ASV Batch :7</span>
+                        </li>
+                        <li class="collection-item">2.
+                            <b class="fnt-family">MOUNICA T</b>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">1SJ15CS064</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/"> Sem:7</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/1/"> CSE</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/1/B/"> Sec:B</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">mounicarammoun23@gmail.com</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> 9164792055 </span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">DOB:23 August, 1997</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Gender:Female</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">ASV Batch :1</span>
+                        </li>
+                        <li class="collection-item">3.
+                            <b class="fnt-family">NAVEEN K B</b>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">1SJ15CS068</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/"> Sem:7</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/1/"> CSE</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><a href="/c/janus/students/7/1/B/"> Sec:B</a></span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">naveenbkn46@gmail.com</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> 9900789937 </span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">DOB:6 October, 1997</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Gender:Male</span>
+                            <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">ASV Batch :2</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------------------------------------attendancepage start---------------------------------------------------------------->
+<div id="attendancepage" class="mycontainer">
+    <div class="row">
+        <div class="col s12">
+            <div class="card z-depth-0 border-grey-1 border-radius-3" style="overflow:hidden">
+                <div class="card-header grey lighten-3" style="padding:8px;">
+                    <div class="card-tittle">
+                            <h4 class="fnt-family grey-text text-darken-2">Attendance  (8.03%) </h4>
+                    </div>
+                </div>
+                <div class="mycontainer" style="padding-top:2%;margin: auto !important;">
+                    <span class="grey-text text-darken-2" style="font-style:italic;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Showing all students of college enrolled in Janus.</span>
+                    <ul class="collection z-depth-0">
+                            <li class="collection-item">1.
+                                <b class="fnt-family"> Number Theory </b>
+                                <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2">2018-07-12</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Slot:1</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Batch: asv-1</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Trainer:Sachin Gudimani</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Present: 40/58 (68.97%)</span>
+                                <a href="#" class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="View">
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><i class="fa fa-eye"></i>
+                                </span></a>
+                            </li>
+                            <li class="collection-item">1.
+                                    <b class="fnt-family"> Number Theory </b>
+                                    <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2">2018-07-12</span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Slot:1</span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Batch: asv-1</span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Trainer:Sachin Gudimani<</span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Present: 40/58 (68.97%)</span>
+                                    <a href="#" class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="View">
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><i class="fa fa-eye"></i>
+                                    </span></a>
+                            </li>
+                            <li class="collection-item">1.
+                                <b class="fnt-family"> Number Theory </b>
+                                <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2">2018-07-12</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Slot:1</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Batch: asv-1</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Trainer:Sachin Gudimani<</span>
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Present: 40/58 (68.97%)</span>
+                                <a href="#" class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="View">
+                                <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"><i class="fa fa-eye"></i>
+                                </span></a>
+                            </li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!------------------------------------------------------------modulepage start---------------------------------------------------------------->
+<div id="modulepage" class="mycontainer">
+        <div class="row">
+            <div class="col s12">
+                <div class="card z-depth-0 border-grey-1 border-radius-3" style="overflow:hidden">
+                    <div class="card-header grey lighten-3" style="padding:8px;">
+                        <div class="card-tittle">
+                                <h4 class="fnt-family grey-text text-darken-2">Modules Completed  (8.03%) </h4>
+                        </div>
+                    </div>
+                    <div class="mycontainer" style="padding-top:2%;margin: auto !important;">
+                        <span class="grey-text text-darken-2" style="font-style:italic;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Showing  Module completion  of Janus.</span>
+                        <ul class="collection z-depth-0">
+                                <li class="collection-item">1.
+                                    <b class="fnt-family"> Number Theory </b>
+                                    <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2">2018-07-12</span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Slot:1</a></span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> 09:00:00 - 10:50:00</span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Trainer:Sachin Gudimani</span>
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Completed</span>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </li>
+                                <li class="collection-item">1.
+                                        <b class="fnt-family"> Resume Building</b>
+                                        <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2">2018-07-10</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Slot:1</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">09:00:00 - 10:50:00</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Trainer:Andrew .G</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Completed</span>
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                </li>
+                                <li class="collection-item">1.
+                                        <b class="fnt-family"> Number Theory </b>
+                                        <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2">2018-07-12</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Slot:1</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">09:00:00 - 10:50:00</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">Trainer:Sachin Gudimani</span>
+                                        <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2"> Completed</span>
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                  
+                                        
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-------------------------------------------------------Assessment start---------------------------------------------------------------->
+<div id="assessmentpage" class="mycontainer">
+        <div class="row">
+            <div class="col s12">
+                <div class="card z-depth-0 border-grey-1 border-radius-3" style="overflow:hidden">
+                    <div class="card-header grey lighten-3" style="padding:8px;">
+                        <div class="card-tittle">
+                                <h4 class="fnt-family grey-text text-darken-2">Internals (8.29 %) </h4>
+                        </div>
+                    </div>
+                    <div class="mycontainer" style="padding-top:2%;margin: auto !important;">
+                        <span class="grey-text text-darken-2" style="font-style:italic;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Showing Internal Assessment Results of Janus.</span>
+                        <ul class="collection z-depth-0">
+                                <li class="collection-item">
+                                    1.    
+                                    <a href="#">Assessment: Janus Pre Assessment</a>
+                                    <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2"> 22/688 (3%)</span>
+                                    <a href="#" class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="View">
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">
+                                    <i class="fa fa-eye"></i>
+                                    </span>
+                                    </a>
+                                </li>
+                                <li class="collection-item">
+                                    2.    
+                                    <a href="#">Assessment: Janus Pre Assessment</a>
+                                    <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2"> 22/688 (3%)</span>
+                                    <a href="#" class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="View">
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">
+                                    <i class="fa fa-eye"></i>
+                                    </span>
+                                    </a>
+                                </li>
+                                <li class="collection-item">
+                                    3.    
+                                    <a href="#">Assessment: Janus Pre Assessment</a>
+                                    <span class="task-cat white grey-text text-darken-1 border-grey-1 border-radius-2"> 22/688 (3%)</span>
+                                    <a href="#" class="tooltipped modal-trigger" data-position="bottom" data-delay="50" data-tooltip="View">
+                                    <span class="task-cat white grey-text text-darken-2 border-grey-1 border-radius-2">
+                                    <i class="fa fa-eye"></i>
+                                    </span>
+                                    </a>
+                                </li>
+                            </ul>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-------------------------------------------------------profilepage start---------------------------------------------------------------->
+<div id="profile-page" class="mycontainer">
+        <div class="row">
+                <div class="col s12">
+                    <div class="card" style="overflow:hidden" style="">
+                        <div class="card-image waves-block" style="height:250px;">
+                            <img src="../image/download.jpg" alt="" style="height:250px;">
+                            <a href="#" style="position:absolute;top:5;right:5" class="tooltipped" data-position="left" data-tooltip="Change cover"><i class="fa fa-pencil white-text"></i></a>
+                        </div>
+            
+                        <figure style="">
+            
+                            <img src="../image/user.png" alt="" class="circle responsive-img z-depth-4" style="width:100px;position:absolute;top:200">
+                            <a href="#" style="position:absolute;top:200;left:135" class="tooltipped" data-position="right" data-tooltip="Change Image"><i class="fa fa-pencil white-text"></i></a>
+            
+            
+                        </figure>
+            
+                        <div class="card-content" style="padding:0 !important">
+                            <div class="row">
+                                <div class="col l3 offset-l2 s8 offset-s4">
+                                        <h6 class="card-title grey-text text-darken-2 fnt-family">Sunil Kumar</h6>
+                                        <p class="medium-small grey-text">Dept. of HRD</p>
+                                </div>
+            
+                                <div class="col l2 s6 offset-s4">
+                                    <h6 class="card-title grey-text text-darken-1 fnt-family">SJCIT</h6>
+                                    <p class="medium-small grey-text">College</p>
+                                </div>
+                                <div class="col l2 s6  offset-s4">
+                                    <h6 class="card-title grey-text text-darken-2 fnt-family">Semester</h6>
+                                    <p class="medium-small grey-text">4</p>
+                                </div>
+                                <div class="col l2 s6 offset-s4">
+                                    <h6 class="card-title grey-text text-darken-2 fnt-family">Section</h6>
+                                    <p class="medium-small grey-text">A</p>
+                                </div>
+                                <div class="col l1 s12 ">
+                                    <a class="btn-floating activator waves-effect waves-light pink right">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="card-reveal" style="display: none; transform: translateY(0px);">
+                                <p>
+                                    <span class="card-title grey-text text-darken-4">Sunil Kumar <i class="fa fa-times right" aria-hidden="true"></i></span>
+                                    <span><i class="fa fa-user" aria-hidden="true"></i> Dept. of HRD</span>
+                                </p>
+                
+                                <p></p>
+                
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> 9880140053</p>
+                                <p><i class="fa fa-at" aria-hidden="true"></i> hrdept.sjcit@gmail.com</p>
+                                <p><i class="fa fa-birthday-cake" aria-hidden="true"></i> hrdept.sjcit@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+        </div>       
+<div class="white card mycontainer1">
+
+    <div class="row">
+        <div class="col s12">
+            <h4 class="fnt-family">Personal Details</h4>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 input-field" disabled>
+                <input disabled type="tel" class="valIDATE"  name="usn" value="SJCITADMIN" required>
+                <label for="usn" class="active">USN</label>       
+        </div>
+
+        <div class="input-field col s12 m6">
+            <select name="gender" required>
+                <option value="" disabled selected>Choose your option</option>
+                            <option value="Male"  >Male</option>
+                            <option value="Female"  >Female</option>
+                            <option value="Others"  >Others</option>
+                        </select>
+            <label>Gender (Mandatory)</label>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="input-field col s12">
+                <input type="text" class="validate" id="fullname" name="name" value="Sunil Kumar" required>
+                <label for="fullname">Name (Mandatory)</label>
+            </div>
+    </div>
+    <div class="row">
+            <div class="input-field col s12">
+                <input type="email" class="validate" id="email" name="email" value="hrdept.sjcit@gmail.com" required>
+                <label for="email">Email (Mandatory)</label>
+            </div>
+    </div>
+
+    <div class="row">
+            <div class="input-field col s12 m6">
+                    <input type="date" class="datepicker" required>
+                    <label for="">Date Of Birth (Mandatory)</label>
+            </div>
+            
+        
+            <div class="input-field col s12 m6">
+                <input type="tel" class="validate" id="phone" name="phone" value="9880140053" required>
+                <label for="phone">Phone  (Mandatory)</label>
+            </div>                
+    </div>
+</div>   
+<!-- end personal details -->
+
+    <div class="mycontainer1" style="width:98%;">
+        <div class="row">
+            <div class="col s12 m6 ">
+                <div class="card-panel z-depth-2">
+                    <div class="row">
+                            <div class="col s12 ">
+                                    <h5 class="fnt-family">Correspondence Address<hr></h5>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12  input-field">
+                                <input type="text" class="validate" id="" name="">
+                                <label for="">Pincode</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12">
+                                <textarea class="materialize-textarea" id="" name=""></textarea>
+                                <label for="per_address">Address</label>
+                
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="col s12 m6 ">
+                <div class="card-panel z-depth-2">
+                    <div class="row">
+                            <div class="col s12 ">
+                                    <h5 class="fnt-family">Permanent Address<hr></h5>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12  input-field">
+                                <input type="text" class="validate" id="" name="">
+                                <label for="">Pincode</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12">
+                                <textarea class="materialize-textarea" id="" name=""></textarea>
+                                <label for="per_address">Address</label>
+                
+                        </div>
+                    </div>
+                </div>    
+            </div>    
+        </div>       
+    </div> 
+
+    <!-- end address -->
+
+    <div class="mycontainer1">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4>Social Links<hr></h4>
+                     
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-facebook prefix" aria-hidden="true"></i>
+                        <input placeholder="https://www.facebook.com/zuck" id="facebook"  type="text" class="validate" name="facebookURL" value="">
+                        <label for="facebook" class="active">Facebook</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-twitter prefix" aria-hidden="true"></i>
+                        <input placeholder="https://twitter.com/sachin_rt" id="twitter" type="text" class="validate" name="twitterURL"  value="">
+                        <label for="twitter" class="active">Twitter</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-linkedin prefix" aria-hidden="true"></i>
+                        <input placeholder="https://www.linkedin.com/in/chris-al-tork-95420a28/" id="linkedin" type="text" class="validate" name="linkedinURL" value="">
+                        <label for="linkedin" class="active">Linkedin</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-instagram prefix" aria-hidden="true"></i>
+                        <input placeholder="https://www.linkedin.com/in/chris-al-tork-95420a28/" id="instagram" type="text" class="validate"  value="" name="instagramURL">
+                        <label for="instagram" class="active">Instagram</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="checkbox" id="product_updates" name="product_updates" >
+                        <label for="product_updates">Send Me Latest Product Updates</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input type="checkbox" id="test1" name="">
+                        <label for="test1">Send Me Course Recomendations</label>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+        <div class="row center-align">
+            <button type="submit" class="btn waves-effect waves-light blue" style="width: 100%;">Save</button>
+        </div>
+   </div>
+</div>
+
+
+    
+<!-------------------------------------------------------------profilepage end---------------------------------------------------------------->
+
+<!-------------------------------------------------------------settings start---------------------------------------------------------------->
+<div id="settingspage" class="mycontainer">
+<div class="row">
+    <div class="col s12">
+        <div class="card z-depth-0 border-grey-1" >
+            <div class="card-header grey lighten-3" style="padding:8px;">
+                <div class="card-tittle" style="margin:0;">
+                    <h4 class="fnt-family">Settings</h4>
+                </div>
+            </div>
+
+            <div class="mycontainer">
+                <div class="row">
+                    <div class="col s12 ">
+                        <h5>Change Password</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 input-field">
+                            <i class="material-icons prefix">textsms</i>
+                            <input id="" type="text" class="validate">
+                            <label>New Password (Mandatory)</label>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                        <div class="col s12 input-field">
+                                <i class="material-icons prefix">textsms</i>
+                                <input id="" type="text" class="validate">
+                                <label>Re-type New Password (Mandatory)</label>
+                            
+                        </div>
+                </div>
+                <button class="btn pink" style="margin-left:10px;"><i class="material-icons right">save</i>save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+<!-------------------------------------------------------------settings end---------------------------------------------------------------->
+<!-------------------------------------------------------------helppage start---------------------------------------------------------------->
+<div id="helppage" class="mycontainer">
+        <div class="row">
+            <div class="col s12">
+                <div class="card z-depth-0 border-grey-1">
+                    <div class="card-header grey lighten-3 border-grey-bottom" style="padding:8px;">
+                        <div class="card-tittle" style="margin:0;">
+                            <h4 class="fnt-family" style="margin-left:10px;">Help</h4>
+                        </div>
+                    </div>
+        
+                    <div class="mycontainer">
+                        <div class="row">
+                            <div class="col s12 center">
+                                <h4>Coming Soon</h4>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-------------------------------------------------------------helppage end---------------------------------------------------------------->
+        
+<!--  -->
+</div>
+</main>
+ 
+
+<footer class="page-footer">
+    <div class="footer-copyright" style="background:#00bcd4;padding:0 !important;">
+        <div class="myfootercontainer" style="background: #00bcd4;">
+        <a href="privacy.html" class="white-text"><i class="fa fa-user-secret"></i> Privacy &amp; Terms</a> &nbsp;| &nbsp;
+        <a href="termsuse.html" class="white-text"><i class="fa fa-unsorted"></i> Terms of Use</a> &nbsp;| &nbsp;
+        <a href="termscondition.html" class="white-text"><i class="fa fa-asterisk"></i> Terms & Conditions </a>
+        <a href="https://zestech.in/" class="white-text myfooter-logo"> <img src="../image/logo-white.png" alt="" style="position:relative;top:12px;height:35px;"
+                class="responsive-img"></a>
+        <p class="myfooterhide" class="white-text ">Copyright © 2018 <a href="#" class="grey-text">Zlearn</a> All
+            Rights Reserved</p>
+    </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+     <!--Import jQuery before materialize.js-->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+     <script>
+            $(document).ready(function(){
+                $('.dropdown-button').dropdown(
+                    {
+                        hover:true
+                    });
+                $('.dropdown-profilebutton').dropdown();
+                $(".button-collapse").sideNav();
+                $('.dropdown-trigger').dropdown();
+                $('.modal').modal({
+                    opacity:0.2,
+                    inDuration:400,
+                    outDuration:100, 
+                    startingTop:'100%',
+                    endingTop:'10%',
+                    dismissible:true
+                    });
+                $('#textarea1').val('New Text');
+                $('#textarea1').trigger('autoresize');
+                $('select').material_select();
+            });
+     </Script>
+
+<script>
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false,
+    container: undefined
+  });
+</script>
+
+
+   <script>
+    $(document).ready(function(){ 
+        $("#dashboard").click(function(){
+            $("#dashboardpage").css("display","block");
+            $("#aboutjanuspage,#studentpage,#attendancepage").css("display","none");
+         });
+
+          $("#janus").click(function(){
+            $("#aboutjanuspage").css("display","block");
+            $("#dashboardpage,#studentpag,#attendancepage,#modulepage,#assessmentpage,#profile-page,#settingspage").css("display","none");
+         });
+
+          $("#student").click(function(){
+            $("#studentpage").css("display","block");
+            $("#dashboardpage,#aboutjanuspage,#attendancepage,#modulepage,#assessmentpage,#profile-page,#settingspage,#helppage").css("display","none");
+         });
+         $("#attendance").click(function(){
+            $("#attendancepage").css("display","block");
+            $("#dashboardpage,#aboutjanuspage,#studentpage,#modulepage,#assessmentpage,#profile-page,#settingspage,#helppage").css("display","none");
+         });
+          $("#module").click(function(){
+            $("#modulepage").css("display","block");
+            $("#dashboardpage,#aboutjanuspage,#studentpage,#attendancepage,#assessmentpage,#profile-page,#settingspage,#helppage").css("display","none");
+         }); 
+
+          $("#assessment").click(function(){
+            $("#assessmentpage").css("display","block");
+            $("#dashboardpage,#aboutjanuspage,#studentpage,#attendancepage,#modulepage,#profile-page,#settingspage,#helppage").css("display","none");
+         }); 
+
+          $("#profile").click(function(){
+            $("#profile-page").css("display","block");
+            $("#dashboardpage,#aboutjanuspage,#studentpage,#attendancepage,#modulepage,#assessmentpage,#settingspage,#helppage").css("display","none");
+         }); 
+
+          $("#settings").click(function(){
+            $("#settingspage").css("display","block");
+            $("#dashboardpage,#aboutjanuspage,#studentpage,#attendancepage,#modulepage,#assessmentpage,#profile-page,#helppage").css("display","none");
+         }); 
+
+          $("#help").click(function(){
+            $("#helppage").css("display","block");
+            $("#dashboardpage,#aboutjanuspage,#studentpage,#attendancepage,#modulepage,#assessmentpage,#profile-page,#settingspage").css("display","none");
+         }); 
+         });
+         
+         
+         
+         
+</Script>
+</body>
+</html>
